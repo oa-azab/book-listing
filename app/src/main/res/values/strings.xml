@@ -2,4 +2,7 @@
     <string name="app_name">Book Listing</string>
     <string name="hint_search_book">Search book ...</string>
     <string name="btn_search">Search</string>
+    <string name="empty_state">Search to show results here.</string>
+    <string name="no_connection">No internet connection.</string>
+
 </resources>
