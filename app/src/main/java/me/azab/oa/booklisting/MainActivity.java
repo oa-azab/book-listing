@@ -95,6 +95,9 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(List<Book> books) {
             super.onPostExecute(books);
 
+            if(books.size() == 0 ){
+                mEmptyView.setText(getString(R.string.no_matching_results));
+            }
             mBooksAdapter.clear();
             mBooksAdapter.addAll(books);
             mLoadingIndicator.setVisibility(View.GONE);

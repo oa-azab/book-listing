@@ -145,12 +145,17 @@ public class Utils {
 
                 // get book title
                 String title = bookInfoObject.getString("title");
-                JSONArray bookAuthors = bookInfoObject.getJSONArray("authors");
 
-                // get book authors
-                String[] authors = new String[bookAuthors.length()];
-                for(int j = 0 ; j<bookAuthors.length(); j++){
-                    authors[j]=bookAuthors.getString(j);
+                String[] authors;
+                if (bookInfoObject.has("authors")) {
+                    JSONArray bookAuthors = bookInfoObject.getJSONArray("authors");
+                    // get book authors
+                    authors = new String[bookAuthors.length()];
+                    for(int j = 0 ; j<bookAuthors.length(); j++){
+                        authors[j]=bookAuthors.getString(j);
+                    }
+                }else{
+                    authors = new String[]{""};
                 }
 //                commented for now
 //                JSONObject bookImageLinksObject = bookInfoObject.getJSONObject("imageLinks");

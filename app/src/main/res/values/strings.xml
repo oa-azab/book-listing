@@ -4,5 +4,6 @@
     <string name="btn_search">Search</string>
     <string name="empty_state">Search to show results here.</string>
     <string name="no_connection">No internet connection.</string>
+    <string name="no_matching_results">No matching results found.</string>
 
 </resources>
