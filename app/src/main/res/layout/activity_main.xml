@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="me.azab.oa.booklisting.MainActivity"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:context="me.azab.oa.booklisting.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,23 +15,37 @@
 
         <EditText
             android:id="@+id/edit_text_search"
-            android:hint="@string/hint_search_book"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:hint="@string/hint_search_book" />
 
         <Button
             android:id="@+id/btn_search"
-            android:text="@string/btn_search"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/btn_search" />
 
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/listview_books"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_weight="1">
+
+        <ListView
+            android:id="@+id/listview_books"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/empty_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Search to show results here."
+            android:textAppearance="?android:textAppearanceMedium" />
+
+    </RelativeLayout>
 
 </LinearLayout>

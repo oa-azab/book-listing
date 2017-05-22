@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     ListView mListView;
     EditText mEditText;
     Button mButton;
+    TextView mEmptyView;
     BooksAdapter mBooksAdapter;
     List<Book> mBooks = new ArrayList<>();
 
@@ -32,12 +34,16 @@ public class MainActivity extends AppCompatActivity {
         mListView = (ListView) findViewById(R.id.listview_books);
         mEditText = (EditText) findViewById(R.id.edit_text_search);
         mButton = (Button) findViewById(R.id.btn_search);
+        mEmptyView = (TextView) findViewById(R.id.empty_view);
 
         // Initialize books adapter
         mBooksAdapter = new BooksAdapter(this, mBooks);
 
         // Set Adapter to listview
         mListView.setAdapter(mBooksAdapter);
+
+        // Set Empty View
+        mListView.setEmptyView(mEmptyView);
 
         // Handle Button Click
         mButton.setOnClickListener(new View.OnClickListener() {
